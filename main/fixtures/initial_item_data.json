@@ -1,0 +1,57 @@
+[
+    {
+        "model":"main.Item",
+        "pk":1,
+        "fields":{
+            "name": "Cosmic Fried Rice",
+            "amount": 82,
+            "description": "Golden brown fried rice that is appealing to the eye and the stomach.",
+            "rarity": "★★☆☆☆",
+            "effect": "Heals a single ally by 24% of their Max HP plus 300 extra HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":2,
+        "fields":{
+            "name": "Trick Snack",
+            "amount": 123,
+            "description": "Eat a handful of them,and they'll launch themselves to the roof of your mouth like popping candy.",
+            "rarity": "★☆☆☆☆",
+            "effect": "Recovers 2 TP for the entire team."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":3,
+        "fields":{
+            "name": "Immortal's Delight",
+            "amount": 8,
+            "description": "An extremely unhealthy drink, but when you drink it, you will have a mysterious smile on your face.",
+            "rarity": "★★★☆☆",
+            "effect": "ATK of all allies increases by 14% plus an extra 230 for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":4,
+        "fields":{
+            "name": "Mung Bean Soda",
+            "amount": 90,
+            "description": "Made from fermented legume-based products. It smells sour and pungent, but tastes cool and refreshing.",
+            "rarity": "★★☆☆☆",
+            "effect": "ATK of all allies increases by 5% plus an extra 170 for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":5,
+        "fields":{
+            "name": "Health Detox Pill",
+            "amount": 16,
+            "description": "An all-purpose antidote that can neutralize the majority of toxic substances entering the human body.",
+            "rarity": "★★★☆☆",
+            "effect": "All allies are immune to debuffs for 3 turns for the next battle."
+        }
+    }
+]
