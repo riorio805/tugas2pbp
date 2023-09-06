@@ -1,6 +1,6 @@
 [
     {
-        "model":"main.Item",
+        "model":"main.models.Item",
         "pk":1,
         "fields":{
             "name": "Cosmic Fried Rice",
@@ -11,7 +11,7 @@
         }
     },
     {
-        "model":"main.Item",
+        "model":"main.models.Item",
         "pk":2,
         "fields":{
             "name": "Trick Snack",
@@ -22,7 +22,7 @@
         }
     },
     {
-        "model":"main.Item",
+        "model":"main.models.Item",
         "pk":3,
         "fields":{
             "name": "Immortal's Delight",
@@ -33,7 +33,7 @@
         }
     },
     {
-        "model":"main.Item",
+        "model":"main.models.Item",
         "pk":4,
         "fields":{
             "name": "Mung Bean Soda",
@@ -44,7 +44,7 @@
         }
     },
     {
-        "model":"main.Item",
+        "model":"main.models.Item",
         "pk":5,
         "fields":{
             "name": "Health Detox Pill",
