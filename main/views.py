@@ -11,6 +11,7 @@ def show_main(request):
     # this is the id's of the items chosen
     indexes = [i for i in range(1, len(items)+1)]
     shuffle(indexes)
+    indexes = indexes[:5]
     
     # filter only the id's chosen, then order by rarity (asc.) and name
     items = items.filter(id__in=indexes).order_by('-rarity', 'name').values()
