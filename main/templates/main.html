@@ -1,0 +1,17 @@
+<h1>hsr inventory</h1>
+
+<p>a selection of some items in my inventory:</p>
+
+{% for x in items %}
+<p>
+<b>{{x.name}} ({{x.rarity}})</b><br>
+Amount: {{x.amount}}<br>
+{{x.description}}<br>
+{{x.effect}}</p>
+{% endfor %}
+
+
+
+<p>----------------------------------------------------------------------<br>
+data taken from the <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
+website by sefriano edsel jieftara, class of pbp d</p>
