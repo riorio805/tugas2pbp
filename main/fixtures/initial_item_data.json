@@ -15,8 +15,8 @@
         "pk":2,
         "fields":{
             "name": "Trick Snack",
-            "amount": 123,
-            "description": "Eat a handful of them,and they'll launch themselves to the roof of your mouth like popping candy.",
+            "amount": 124,
+            "description": "Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
             "rarity": "★☆☆☆☆",
             "effect": "Recovers 2 TP for the entire team."
         }
@@ -52,6 +52,127 @@
             "description": "An all-purpose antidote that can neutralize the majority of toxic substances entering the human body.",
             "rarity": "★★★☆☆",
             "effect": "All allies are immune to debuffs for 3 turns for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":6,
+        "fields":{
+            "name": "Trash",
+            "amount": 89,
+            "description": "Worthless trash. Better carry some with you.",
+            "rarity": "★☆☆☆☆",
+            "effect": "Causes a single ally to lose HP equal to 15% of their Max HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":7,
+        "fields":{
+            "name": "Simple Protective Gear",
+            "amount": 62,
+            "description": "Simple protection gear to cover the most vulnerable part of your body.",
+            "rarity": "★★☆☆☆",
+            "effect": "Increase DEF of all allies by 25% in the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":8,
+        "fields":{
+            "name": "Topological Acceleration Band",
+            "amount": 3,
+            "description": "Some researchers invented this as an experiment. Other than for workout purposes, its use is very limited at the current stage.",
+            "rarity": "★★★★☆",
+            "effect": "Increases SPD of all allies by 24% for 2 turns."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":9,
+        "fields":{
+            "name": "Energy Drink (sugar-free)",
+            "amount": 14,
+            "description": "A bottle of Energy Drink. Some may call it soulless, but honestly, it's not that bad.",
+            "rarity": "★★★☆☆",
+            "effect": "Regenerates 50% of Max Energy for a single ally."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":10,
+        "fields":{
+            "name": "Short Rejuvepill",
+            "amount": 69,
+            "description": "A simple remedy made with various ingredients. It can't cure all ailments, but it's better than nothing.",
+            "rarity": "★☆☆☆☆",
+            "effect": "Heals one ally for 1 HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":11,
+        "fields":{
+            "name": "Berrypheasant Skewers",
+            "amount": 33,
+            "description": "It's actually fruit skewers, and no Berrypheasants were harmed during the production process.",
+            "rarity": "★☆☆☆☆",
+            "effect": "Heals one ally by 15% of the ally's Max HP plus 150 extra HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":12,
+        "fields":{
+            "name": "Crystal Lizard Satay",
+            "amount": 6,
+            "description": "A skewer made from cold-blooded reptiles that live in mines.",
+            "rarity": "★★☆☆☆",
+            "effect": "Recovers 4 TP for your team, but each team member loses HP equal to 15% of their Max HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":13,
+        "fields":{
+            "name": "Comfort Food",
+            "amount": 11,
+            "description": "Simple food that lacks character, but they do make you feel stuffed.",
+            "rarity": "★☆☆☆☆",
+            "effect": "Heals a single ally by 15% of their Max HP plus 150 extra HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":14,
+        "fields":{
+            "name": "Rice Plant Panicle",
+            "amount": 12,
+            "description": "The pleasant smell gives you good appetite, so you choose not to ask why seeds planted on Protein Rice can yield flowers.",
+            "rarity": "★★☆☆☆",
+            "effect": "Increases Incoming Healing of all allies by 18% for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":15,
+        "fields":{
+            "name": "Steamed Puffergoat Milk",
+            "amount": 22,
+            "description": "It's sweet when warm without needing extra sugar, but becomes bitter when cold.",
+            "rarity": "★★☆☆☆",
+            "effect": "Revives one downed character and heals them for 10% of the character's Max HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":16,
+        "fields":{
+            "name": "Enhancement Paste: Quantum",
+            "amount": 8,
+            "description": "A cream made from a mixture of Path materials and other things. Apply it to the right weapon to boost it's effectiveness.",
+            "rarity": "★★★☆☆",
+            "effect": "Increases Quantum DMG of all allies by 24% for the next battle."
         }
     }
 ]
