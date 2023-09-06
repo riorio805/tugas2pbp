@@ -50,13 +50,12 @@ Setup versi python dan command awal.
 Wait deployment (😴😴😴)<br>
 Done
 
-
 #### Membuat sebuah `README.md` yang berisi tautan menuju aplikasi Adaptable yang sudah di-*deploy*:
 You're reading this right now 👍👍👍👍 (keep going)
 
 #### Bonus things *:)*
 - Database implemented.
-There's 16 items in the database and the server randomly chooses 5 items to show the user. (see main.views) <br>
+There's 21 items in the database and the server randomly chooses 5 items to show the user. (see main.views) <br>
 - Redirect from '/' to '/main/'
 ##
 
@@ -64,7 +63,10 @@ There's 16 items in the database and the server randomly chooses 5 items to show
 Not yet
 
 ## Why use
-Not yet
+Virtual environment digunakan karena 
+
+Pembuatan aplikasi web tanpa menggunakan *virtual environment* masih tetap mungkin, tetapi ini tidak merupakan *best practices* karena dapat menimbulkan beberapa isu, seperti:
+\- Konflik *dependencies* : 
 
 ## What is
-Not yet
+Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.

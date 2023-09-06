@@ -16,7 +16,7 @@
         "fields":{
             "name": "Trick Snack",
             "amount": 124,
-            "description": "Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
+            "description": "A packet of cooked seeds. Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
             "rarity": "★☆☆☆☆",
             "effect": "Recovers 2 TP for the entire team."
         }
@@ -82,7 +82,7 @@
         "fields":{
             "name": "Topological Acceleration Band",
             "amount": 3,
-            "description": "Some researchers invented this as an experiment. Other than for workout purposes, its use is very limited at the current stage.",
+            "description": "Some researchers invented this as an experiment. Other than for workout purposes, its use is very limited.",
             "rarity": "★★★★☆",
             "effect": "Increases SPD of all allies by 24% for 2 turns."
         }
@@ -115,7 +115,7 @@
         "fields":{
             "name": "Berrypheasant Skewers",
             "amount": 33,
-            "description": "It's actually fruit skewers, and no Berrypheasants were harmed during the production process.",
+            "description": "It is actually fruit skewers, and no Berrypheasants were harmed during the production process.",
             "rarity": "★☆☆☆☆",
             "effect": "Heals one ally by 15% of the ally's Max HP plus 150 extra HP."
         }
@@ -126,7 +126,7 @@
         "fields":{
             "name": "Crystal Lizard Satay",
             "amount": 6,
-            "description": "A skewer made from cold-blooded reptiles that live in mines.",
+            "description": "A meat skewer made from cold-blooded reptiles that live in mines.",
             "rarity": "★★☆☆☆",
             "effect": "Recovers 4 TP for your team, but each team member loses HP equal to 15% of their Max HP."
         }
@@ -159,7 +159,7 @@
         "fields":{
             "name": "Steamed Puffergoat Milk",
             "amount": 22,
-            "description": "It's sweet when warm without needing extra sugar, but becomes bitter when cold.",
+            "description": "It's sweet after warming without needing extra sugar, but becomes bitter when cold.",
             "rarity": "★★☆☆☆",
             "effect": "Revives one downed character and heals them for 10% of the character's Max HP."
         }
@@ -173,6 +173,61 @@
             "description": "A cream made from a mixture of Path materials and other things. Apply it to the right weapon to boost it's effectiveness.",
             "rarity": "★★★☆☆",
             "effect": "Increases Quantum DMG of all allies by 24% for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":17,
+        "fields":{
+            "name": "Jim Roger Bread Soda",
+            "amount": 10,
+            "description": "Crush dried bread into fine crumbs, add water, extract the liquid and let it undergo fermentation. Add Jim Roger patented ingredients as the last step. And there you go, authentic taste of Jim Roger!",
+            "rarity": "★★★☆☆",
+            "effect": "Heals a single ally by 100% of their Max HP."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":18,
+        "fields":{
+            "name": "Wild Herb Soup",
+            "amount": 18,
+            "description": "Soup made of a type of moss that has a soothing bluish glow and can be found everywhere underground.",
+            "rarity": "★★☆☆☆",
+            "effect": "Causes all allies to lose HP equal to 15% of their Max HP and increase their ATK by 200 for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":19,
+        "fields":{
+            "name": "Kapo-Kali",
+            "amount": 6,
+            "description": "The king of soft drinks. It looks like an azure gravity rainbow with sparkling bubbles surging in the bottle.",
+            "rarity": "★★★☆☆",
+            "effect": "Increases all allies' DMG of a random Type by 30% for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":20,
+        "fields":{
+            "name": "Disposable Kinetic Arm",
+            "amount": 9,
+            "description": "A formidable kinetic arm, charged with hatred towards organic life forms.",
+            "rarity": "★★★★☆",
+            "effect": "Increases ATK of all allies by 325 and CRIT Rate by 12% for the next battle."
+        }
+    },
+    {
+        "model":"main.Item",
+        "pk":21,
+        "fields":{
+            "name": "Longevity Pill of Cruelty",
+            "amount": 4,
+            "description": "It is said to have the effect of improving overall fitness and rendering those who take it immune to all diseases for a short period of time.",
+            "rarity": "★★★★☆",
+            "effect": "Increases Max HP of all allies by 20% and Effect RES by 6% in the next 3 battles."
         }
     }
 ]
