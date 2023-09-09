@@ -29,7 +29,7 @@
 {% for x in items %}
 <p>
 {% if x.id == 2 %}
-<b><a href="{% static 'main/media/tricksnack.gif'%}">{{x.name}}</a> ({{x.rarity}})</b><br>
+<b><a href="{% static 'main/media/tricksnack.gif' %}">{{x.name}}</a> ({{x.rarity}})</b><br>
 {% else %}
 <b>{{x.name}} ({{x.rarity}})</b><br>
 {% endif %}
