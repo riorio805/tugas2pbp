@@ -33,7 +33,8 @@ def show_landing(request):
     return render(request, "md.html", context)
 
 def show_media(request):
-    fstr = request.path.split('/')[-1]
+    fstr = request.path.split('/')[-1].split('.')
+    fstr = fstr[0] + '.' + fstr[-1]
     ftype = fstr.split('.')[-1]
     if ftype not in ALLOWED_FILES:
         fstr = "tricksnack.gif"
@@ -43,4 +44,6 @@ def show_media(request):
     context = {
         'furl' : fstr
     }
+    
+    print(STATIC_URL + fstr)
     return render(request, "image.html", context)
