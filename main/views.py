@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from main.models import Item
 from random import shuffle
 from inventory.settings import BASE_DIR, ALLOWED_FILES, STATIC_URL
+import json
 
 # Create your views here.
 def show_main(request):
@@ -23,7 +24,6 @@ def show_main(request):
 
     return render(request, "main.html", context)
 
-
 def show_landing(request):
     with open(BASE_DIR/'README.md', 'rb') as f:
         a = f.read().decode()   
@@ -33,16 +33,14 @@ def show_landing(request):
     return render(request, "md.html", context)
 
 def show_media(request):
-    fstr = request.path.split('/')[-1].split('.')
-    fstr = fstr[0] + '.' + fstr[-1]
-    ftype = fstr.split('.')[-1]
-    if ftype not in ALLOWED_FILES:
-        fstr = "tricksnack.gif"
+    statics = json.loads(open(BASE_DIR/'static/staticfiles.json', "r").read())['paths']
+    fstr = "main" + request.path
+    if fstr not in statics:
+        fstr = "main/media/tricksnack.gif"
         print("bad")
-    
-    fstr = "main/media/" + fstr
+
     context = {
-        'furl' : fstr
+        'furl' : statics[fstr]
     }
     
     print(STATIC_URL + fstr)
