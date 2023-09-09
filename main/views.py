@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from main.models import Item
 from random import shuffle
-from inventory.settings import BASE_DIR, ALLOWED_FILES
+from inventory.settings import BASE_DIR, ALLOWED_FILES, STATIC_URL
 
 # Create your views here.
 def show_main(request):
@@ -35,9 +35,11 @@ def show_landing(request):
 def show_media(request):
     fstr = request.path.split('/')[-1]
     ftype = fstr.split('.')[-1]
-    if ftype not in ALLOWED_FILES: fstr = "tricksnack.gif"
+    if ftype not in ALLOWED_FILES:
+        fstr = "tricksnack.gif"
+        print("bad")
     
-    fstr = "media/" + fstr
+    fstr = "main/media/" + fstr
     context = {
         'furl' : fstr
     }
