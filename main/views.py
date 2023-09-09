@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from main.models import Item
 from random import shuffle
+from inventory.settings import BASE_DIR, ALLOWED_FILES
 
 # Create your views here.
 def show_main(request):
@@ -23,6 +24,21 @@ def show_main(request):
     return render(request, "main.html", context)
 
 
-def redirect_main(request):
-    response = redirect('/main/')
-    return response
+def show_landing(request):
+    with open(BASE_DIR/'README.md', 'rb') as f:
+        a = f.read().decode()   
+    context = {
+        'content': a
+    }
+    return render(request, "md.html", context)
+
+def show_media(request):
+    fstr = request.path.split('/')[-1]
+    ftype = fstr.split('.')[-1]
+    if ftype not in ALLOWED_FILES: fstr = "tricksnack.gif"
+    
+    fstr = "media/" + fstr
+    context = {
+        'furl' : fstr
+    }
+    return render(request, "image.html", context)

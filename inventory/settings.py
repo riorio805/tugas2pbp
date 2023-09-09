@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+ALLOWED_FILES = ["gif", "png", "jpeg", "mp4"]
+
 
 # Application definition
 
