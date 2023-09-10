@@ -35,12 +35,13 @@ def show_landing(request):
 def show_media(request):
     statics = json.loads(open(BASE_DIR/'static/staticfiles.json', "r").read())['paths']
     fstr = "main" + request.path
+    
     if fstr not in statics:
         fstr = "main/media/tricksnack.gif"
         print("bad")
 
     context = {
-        'furl' : statics[fstr]
+        'furl' : fstr
     }
     
     print(STATIC_URL + fstr)

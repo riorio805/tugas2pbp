@@ -1,20 +1,25 @@
 # tugas2pbp
 
-Link to page: [here](./main/)
+Link to page: [here](./main/)<br>
+Last checklist items:<br>
+[Implementasi](#how-to)
+\- [request client](#heres-a-picture-maybe)
+\- [venv](#why-use)
+\- [MVC, MVT, MVVM](#what-is)
 <br><br>
 
 ## Checklist:
 - [x] Membuat sebuah proyek Django baru.
 - [x] Membuat aplikasi dengan nama `main` pada proyek tersebut.
 - [x] Melakukan *routing* pada proyek agar dapat menjalankan aplikasi `main`.
-- [x] Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut.
+<input type="checkbox" disabled="" checked=""> Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut. 
     - `name` sebagai nama *item* dengan tipe `CharField`.
     - `amount` sebagai jumlah *item* dengan tipe `IntegerField`.
     - `description` sebagai deskripsi *item* dengan tipe `TextField`.
 - [x] Membuat sebuah fungsi pada `views.py` untuk dikembalikan ke dalam sebuah *template* HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
 - [x] Membuat sebuah *routing* pada `urls.py` aplikasi `main` untuk memetakan fungsi yang telah dibuat pada `views.py`.
-- [x] Melakukan *deployment* ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
-- [ ] Membuat sebuah `README.md` yang berisi tautan menuju aplikasi Adaptable yang sudah di-*deploy*, serta jawaban dari beberapa pertanyaan berikut.
+- [x] Melakukan *deployment* ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.<br>
+<input type="checkbox" disabled=""> Membuat sebuah `README.md` yang berisi tautan menuju aplikasi Adaptable yang sudah di-*deploy*, serta jawaban dari beberapa pertanyaan berikut.
     - Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
     - Buatlah bagan yang berisi *request client* ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara `urls.py`, `views.py`, `models.py`, dan berkas `html`.
     - Jelaskan mengapa kita menggunakan ***virtual environment***? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan ***virtual environment***?
@@ -57,13 +62,15 @@ You're reading this right now 👍👍👍👍 (keep going)
 
 #### Bonus things *:)*
 - Database implemented.
-There's 21 items in the database and the server randomly chooses 5 items to show the user. (see `main.views`) <br>
-- ~~Redirect from '/' to '/main/'~~ `'/'` is now a landing page containing this very file.
+There's 21 items in the database and the server randomly chooses 5 items to show the user. (see `main.views.show_main`) <br>
+- <s>Redirect from '/' to '/main/'</s> `'/'` is now a landing page containing this very file.
+- Images!
+
 ---
-
 ## here's a picture maybe
-Not yet
+not yet
 
+---
 ## Why use 
 (Not done)<br>
 Virtual environment digunakan karena 
@@ -71,9 +78,17 @@ Virtual environment digunakan karena
 Pembuatan aplikasi web tanpa menggunakan *virtual environment* masih tetap bisa, tetapi ini tidak merupakan *best practices* karena dapat menimbulkan beberapa isu, seperti:<br>
 \- Konflik *dependencies* : 
 
+---
 ## What is
 Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 Not yet <br>
+
 | Somthing | a |
-|----|----|
+| --------- | ---- |
 | Somthing | a |
+
+
+---
+## Thanks for reading
+here's a cute sticker of bailu:<br>
+<img src="./static/main/media/Bailu_Sticker_03.png" alt="cute!!!" title="cute!!!" width="128" height="128"/>

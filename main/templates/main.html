@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'main/media/March_7th_Sticker_07.png' %}" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'main/css/github-markdown.css' %}">
 <style>
@@ -29,10 +30,11 @@
 {% for x in items %}
 <p>
 {% if x.id == 2 %}
-<b><a href="{% static 'main/media/tricksnack.gif' %}">{{x.name}}</a> ({{x.rarity}})</b><br>
-{% else %}
-<b>{{x.name}} ({{x.rarity}})</b><br>
+<a href="{% static 'main/media/tricksnack.gif' %}">
 {% endif %}
+<img src="{% static x.image_dir %}" alt={{x.name}} width="128" height="128"/><br>
+<b>{{x.name}} {% if x.id == 2 %}</a>{% endif %} ({{x.rarity}})</b><br>
+
 Amount: {{x.amount}}<br>
 {{x.description}}<br>
 {{x.effect}}

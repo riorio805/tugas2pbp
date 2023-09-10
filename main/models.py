@@ -7,3 +7,4 @@ class Item(models.Model):
     description = models.TextField()
     rarity = models.TextField()
     effect = models.TextField()
+    image_dir = models.TextField()
