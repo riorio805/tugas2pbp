@@ -34,16 +34,15 @@
 {% endif %}
 <img src="{% static x.image_dir %}" alt={{x.name}} width="128" height="128"/><br>
 <b>{{x.name}} {% if x.id == 2 %}</a>{% endif %} ({{x.rarity}})</b><br>
-
 Amount: {{x.amount}}<br>
 {{x.description}}<br>
-{{x.effect}}
+{{x.effect}}<br><br>
 </p>
 {% endfor %}
 
 <br><a href="..">Go back</a><br>
 <hr>
-description and effects taken (and condensed) from the <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
-css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a> and used under the MIT License<br>
+description, effects, and images taken (and condensed) from <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
+github-markdown.css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a> and used under the MIT License<br>
 website by sefriano edsel jieftara, class of pbp d</p>
 </article>

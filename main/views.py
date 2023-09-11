@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from main.models import Item
 from random import shuffle
-from inventory.settings import BASE_DIR, ALLOWED_FILES, STATIC_URL
+from inventory.settings import BASE_DIR, ALLOWED_FILES, STATIC_URL, STATIC_ROOT
 import json
 
 # Create your views here.
@@ -33,7 +33,7 @@ def show_landing(request):
     return render(request, "md.html", context)
 
 def show_media(request):
-    statics = json.loads(open(BASE_DIR/'static/staticfiles.json', "r").read())['paths']
+    statics = json.loads(open(STATIC_ROOT/'staticfiles.json', "r").read())['paths']
     fstr = "main" + request.path
     
     if fstr not in statics:
@@ -46,3 +46,13 @@ def show_media(request):
     
     print(STATIC_URL + fstr)
     return render(request, "image.html", context)
+
+
+def show_media_list(request):
+    statics = json.loads(open(STATIC_ROOT/'staticfiles.json', "r").read())['paths']
+    media_list = [i.split('/')[-1] for i in statics if (i[:10]=="main/media")]
+    
+    context = {
+        'media_list': media_list    
+    }
+    return render(request, "media.html", context)
