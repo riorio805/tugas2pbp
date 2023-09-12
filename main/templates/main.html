@@ -32,7 +32,7 @@
 {% if x.id == 2 %}
 <a href="{% static 'main/media/tricksnack.gif' %}">
 {% endif %}
-<img src="{% static x.image_dir %}" alt={{x.name}} width="128" height="128"/><br>
+<img src="{% static x.image_dir %}" alt="{{x.name}}" title="{{x.name}}" width="128" height="128"/><br>
 <b>{{x.name}} {% if x.id == 2 %}</a>{% endif %} ({{x.rarity}})</b><br>
 Amount: {{x.amount}}<br>
 {{x.description}}<br>

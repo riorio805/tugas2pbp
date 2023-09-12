@@ -13,3 +13,7 @@ class mainTest(TestCase):
     def test_landing_using_markdown(self):
         response = Client().get('/')
         self.assertTemplateUsed(response, 'md.html')
+
+    def test_static(self):
+        response = Client().get('/static/main/media/tricksnack.gif')
+        self.assertEqual(response.status_code, 200)
