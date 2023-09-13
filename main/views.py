@@ -44,7 +44,6 @@ def show_media(request):
         'furl' : fstr
     }
     
-    print(STATIC_URL + fstr)
     return render(request, "image.html", context)
 
 

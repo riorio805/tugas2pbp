@@ -70,9 +70,11 @@ You're reading this right now 👍👍👍👍 (keep going)
 There's 21 items in the database and the server randomly chooses 5 items to show the user. (see `main.views.show_main`) <br>
 - ~~Redirect from '/' to '/main/'~~ `'/'` is now a landing page containing this very file.
 - Images! ([list here](./media/))
-- 2 new tests:
+- 4 'new' tests:
     - `test_landing_using_markdown` => test this page
     - `test_static` => test the static files
+    - `test_media` => test the media delivery
+    - `test_main_items` => test main models
 
 
 ---
