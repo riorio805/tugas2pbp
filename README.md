@@ -1,9 +1,7 @@
 # tugas2pbp
 
 Link to webpage:<br>
--> [on Adaptable.app](https://hsr-inventory.adaptable.app/)<br>
 -> [on domcloud.io](https://my-hsr-inventory.domcloud.io/)<br>
-(Yes, domcloud works.)
 
 Link to main: [here](./main)<br>
 Last checklist items:<br>
