@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-ALLOWED_FILES = ["gif", "png", "jpeg", "mp4"]
+ALLOWED_FILES = ["gif", "png", "jpeg", "jpg"]
 
 
 # Application definition
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'inventory.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'main/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +132,10 @@ STORAGES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Settings related main app
+
+# Set to 0 or less to show all items
+ITEM_SHOW_COUNT = 0

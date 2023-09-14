@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0003_remove_item_price'),
+        ('main', '0002_item_effect_item_rarity'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='item',
             name='image_dir',
-            field=models.TextField(default='main/media/March_7th_Sticker_07.png'),
+            field=models.TextField(default='main/images/March_7th_Sticker_07.png'),
             preserve_default=False,
         ),
     ]

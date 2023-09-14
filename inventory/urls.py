@@ -17,15 +17,11 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
-from main.views import show_landing, show_media, show_media_list
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', include('main.urls')),
-    path('', show_landing, name="show_landing"),
-    path('media/', show_media_list, name="show_media_list"),
-    re_path('^media/*', show_media, name="show_media"),
+    path('', include('main.urls')),
 ]
 
 if settings.DEBUG:

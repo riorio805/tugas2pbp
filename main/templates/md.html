@@ -1,30 +1,8 @@
+{% extends 'markdown_base.html' %}
 {% load static %}
 {% load markdown_extras %}
 
-<link rel="shortcut icon" type="image/png" href="{% static 'main/media/Bailu_Sticker_03.png' %}" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'main/css/github-markdown.css' %}">
-<style>
-	.markdown-body {
-		box-sizing: border-box;
-		min-width: 200px;
-		max-width: 1080px;
-		margin: 0 auto;
-		padding: 45px;
-	}
-
-	@media (max-width: 767px) {
-		.markdown-body {
-			padding: 15px;
-		}
-	}
-	@media (prefers-color-scheme: dark) {
-		body {
-			background-color: #0d1117;
-		}
-	}
-</style>
-
-<article class="markdown-body">
+{% block content %}
+<link rel="shortcut icon" type="image/png" href="{% static 'main/images/Bailu_Sticker_03.png' %}" >
 {{ content | markdown | safe }}
-</article>
+{% endblock %}

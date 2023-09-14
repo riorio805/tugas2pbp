@@ -1,48 +1,57 @@
+{% extends 'markdown_base.html' %}
 {% load static %}
-<link rel="shortcut icon" type="image/png" href="{% static 'main/media/March_7th_Sticker_07.png' %}" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'main/css/github-markdown.css' %}">
-<style>
-	.markdown-body {
-		box-sizing: border-box;
-		min-width: 200px;
-		max-width: 1080px;
-		margin: 0 auto;
-		padding: 45px;
-	}
-	@media (max-width: 767px) {
-		.markdown-body {
-			padding: 15px;
-		}
-	}
-    @media (prefers-color-scheme: dark) {
-		body {
-			background-color: #0d1117;
-		}
-	}
-</style>
+{% load get_item %}
 
-<article class="markdown-body">
+{% block content %}
+<link rel="shortcut icon" type="image/png" href="{% static 'main/images/March_7th_Sticker_07.png' %}" >
+
+
 <h1>hsr inventory</h1>
-
-<p>a selection of some items in my inventory:</p>
+{% if all_item_count == item_count %}
+<h4>There are currently {{all_item_count}} items in this app.<br>
+To show only n items, append '/{n}' to the url path.</h4>
+{%else%}
+<h4>There are currently {{all_item_count}} items in this app, of which {{item_count}} are shown.</h4>
+{%endif%}
 
 {% for x in items %}
-<p>
-{% if x.id == 2 %}
-<a href="{% static 'main/media/tricksnack.gif' %}">
-{% endif %}
-<img src="{% static x.image_dir %}" alt="{{x.name}}" title="{{x.name}}" width="128" height="128"/><br>
-<b>{{x.name}} {% if x.id == 2 %}</a>{% endif %} ({{x.rarity}})</b><br>
-Amount: {{x.amount}}<br>
-{{x.description}}<br>
-{{x.effect}}<br><br>
-</p>
+<span>
+	{% if x.id == 2 %}
+	<a href="{% static 'main/images/tricksnack.gif' %}">
+	{% endif %}
+	<div style="height:200px;position: relative;background-image:url('/static/main/images/Bailu_Sticker_03.png');background-size: contain;">
+	<img style="background: transparent;" src="{{ x.image_dir }}" alt="{{x.name}}" title="{{x.name}}" width="160" class="bound"/><br>
+	</div>
+	<div style="border-bottom:1px solid var(--color-border-default);height:100px;">
+		<b>
+			{{x.name}}
+			{% if x.id == 2 %}
+			</a>
+			{% endif %}
+			<br>({{ rarity|get_item:x.id }})
+		</b>
+		<br>
+		Amount: {{x.amount}}
+	</div>
+	<div style="height:200px;width:200px;overflow:auto;">
+		{{x.description}}<br>
+		Effect: {{x.effect}}<br><br>
+	</div>
+</span>
 {% endfor %}
 
-<br><a href="..">Go back</a><br>
+<br><br>
+<a href="{% url 'main:create_item' %}">
+	<button>
+		Add New Item
+	</button>
+</a>
+
+<a href=".."><button>Go back</button></a>
 <hr>
 description, effects, and images taken (and condensed) from <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
 github-markdown.css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a> and used under the MIT License<br>
 website by sefriano edsel jieftara, class of pbp d</p>
-</article>
+
+
+{% endblock %}
