@@ -19,7 +19,7 @@ To show only n items, append '/{n}' to the url path.</h4>
 	{% if x.id == 2 %}
 	<a href="{% static 'main/images/tricksnack.gif' %}">
 	{% endif %}
-	<div style="height:200px;position: relative;background-image:url('/static/main/images/Bailu_Sticker_03.png');background-size: contain;">
+	<div style="height:200px;position: relative;background-image:url('/static/main/images/Background_Item_{{x.rarity}}_Star.png');background-size: contain;">
 	<img style="background: transparent;" src="{{ x.image_dir }}" alt="{{x.name}}" title="{{x.name}}" width="160" class="bound"/><br>
 	</div>
 	<div style="border-bottom:1px solid var(--color-border-default);height:100px;">

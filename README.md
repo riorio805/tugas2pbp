@@ -2,6 +2,7 @@
 
 Link to webpage:<br>
 -> [on domcloud.io](https://my-hsr-inventory.domcloud.io/)<br>
+-> [on pbp.cs.ui.ac.id](https://my-hsr-inventory.pbp.cs.ui.ac.id)
 Previous weeks page: [here](./archive/archive_list.md)<br>
 
 (only works on the website)<br>
