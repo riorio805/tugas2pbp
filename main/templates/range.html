@@ -1,0 +1,14 @@
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %}>
+<text><output id="rarityVal">
+    {% if widget.value != None %}
+        {{widget.value|stringformat:'s'}}
+    {%else%}
+        3
+    {%endif%}</output> stars</text><br>
+<datalist id="number">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</datalist>

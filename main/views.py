@@ -9,26 +9,28 @@ from random import shuffle
 import json
 
 # Create your views here.
-def show_main(request, item_count=0):
+def show_main(request, item_count=-1):
     # Grab items from database
     items = Item.objects.all()
     all_item_count = len(items)
 
-    # randomly select n items if item_count > 0
-    indexes = [i for i in range(1, len(items)+1)]
-    if item_count > 0:
+    # randomly select n items from database if item_count >= 0
+    indexes = [i.pk for i in items]
+    if item_count >= 0:
         shuffle(indexes)
         indexes = indexes[:item_count]
-    
-    # filter only the id's chosen, then order by rarity (asc.) and name
-    items = items.filter(id__in=indexes).order_by('rarity', 'name').values()
+        # filter only the id's chosen, then order by rarity (asc.) and name
+        items = items.filter(id__in=indexes)
+
+    print(items)
+
+    items = items.order_by('rarity', 'name')
     
     # process rarity into a string
     # ★☆
     rarity = {}
     for i in items:
-        rarity[i['id']] = "★" * i['rarity'] + "☆" * (5 - i['rarity'])
-
+        rarity[i.id] = "★" * i.rarity + "☆" * (5 - i.rarity)
 
     context = {
         'items': items,
@@ -63,8 +65,17 @@ def show_archive(request, file):
 
 def show_statics_list(request):
     statics = json.loads(open(STATIC_ROOT/'staticfiles.json', "r").read())['paths']
-    static_list = ['/'.join(i.split('/')[1:]) for i in statics if (i[:5]=="main/")]
-    
+    static_list = {}
+
+    for i in statics:
+        # check static location
+        sdir = i.split('/')[0]
+        # if admin get out
+        if sdir == "admin": continue
+        if sdir not in static_list:
+            static_list[sdir] = []
+        static_list[sdir].append('/'.join(i.split('/')[1:]))
+
     context = {
         'static_list': static_list
     }
@@ -72,7 +83,7 @@ def show_statics_list(request):
 
 
 def create_item(request):
-    form = ItemForm(request.POST or None)
+    form = ItemForm(request.POST or None, initial={'rarity': 3})
 
     if form.is_valid() and request.method == "POST":
         form.save()

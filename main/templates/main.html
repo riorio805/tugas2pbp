@@ -8,14 +8,18 @@
 
 <h1>hsr inventory</h1>
 {% if all_item_count == item_count %}
-<h4>There are currently {{all_item_count}} items in this app.<br>
-To show only n items, append '/{n}' to the url path.</h4>
+	<h4>There are currently {{all_item_count}} items in this app.<br>
+	{% if all_item_count != 0 %}
+	To show only n items, append '/{n}' to the url path.<br>
+	Example: <a href="10">10 items</a></h4>
+	{%endif%}
 {%else%}
-<h4>There are currently {{all_item_count}} items in this app, of which {{item_count}} are shown.</h4>
+	<h4>There are currently {{all_item_count}} items in this app, of which {{item_count}} are shown.<br>
+	<a href=".">See all items</a></h4>
 {%endif%}
 
 {% for x in items %}
-<span>
+<span class="item_window">
 	{% if x.id == 2 %}
 	<a href="{% static 'main/images/tricksnack.gif' %}">
 	{% endif %}
@@ -41,7 +45,7 @@ To show only n items, append '/{n}' to the url path.</h4>
 {% endfor %}
 
 <br><br>
-<a href="{% url 'main:create_item' %}">
+<a href="{% url 'main:create_item' %}" style="margin-right: 3px;">
 	<button>
 		Add New Item
 	</button>

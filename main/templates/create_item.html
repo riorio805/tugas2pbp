@@ -1,7 +1,7 @@
 {% extends 'markdown_base.html' %}
 {% load static %}
 {% block content %}
-<link rel="shortcut icon" type="image/png" href="{% static 'main/image/Pela_Sticker_02.png' %}" >
+<link rel="shortcut icon" type="image/png" href="{% static 'main/images/Pela_Sticker_02.png' %}" >
 
 <h1>New Item</h1>
 <form method="POST">
@@ -9,8 +9,7 @@
     <table>
         {{ form.as_table }}
         <tr>
-            <td></td>
-            <td>
+            <td colspan="2">
                 <a>
                     Fill "Image dir" with the url of the image.<br>
                     Files allowed: .gif, .png, .jpeg, .jpg

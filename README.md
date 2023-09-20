@@ -1,8 +1,7 @@
 # tugas3pbp
 
 Link to webpage:<br>
--> [on domcloud.io](https://my-hsr-inventory.domcloud.io/)<br>
--> [on pbp.cs.ui.ac.id](https://my-hsr-inventory.pbp.cs.ui.ac.id)
+-> [on pbp.cs.ui.ac.id](http://sefriano-edsel-tugas.pbp.cs.ui.ac.id)<br>
 Previous weeks page: [here](./archive/archive_list.md)<br>
 
 (only works on the website)<br>
@@ -11,7 +10,7 @@ Link to main: [here](./main)<br>
 
 Second last checklist items:<br>
 [POST, GET](#pog-test)
-\- [XML, JSON, HTML](#xmljs-on-html)
+\- [XML, JSON, HTML](#johns-xml-tml)
 \- [JSON good](#json-the-best)
 \- [Implementasi](#how-to)<br>
 Last checklist item:
@@ -24,10 +23,10 @@ Last checklist item:
 - [x] Tambahkan 5 fungsi `views` untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML *by ID*, dan JSON *by ID*.
 - [x] Membuat routing URL untuk masing-masing `views` yang telah ditambahkan pada poin 2.
 - [ ] Menjawab beberapa pertanyaan berikut pada `README.md` pada *root folder*.
-    - [ ] Apa perbedaan antara form `POST` dan form `GET` dalam Django?
-    - [ ] Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+    - [x] Apa perbedaan antara form `POST` dan form `GET` dalam Django?
+    - [x] Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
     - [ ] Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
-    - [ ] Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
+    - [x] Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
 - [x] Mengakses kelima URL di poin 2 menggunakan Postman, membuat *screenshot* dari hasil akses URL pada Postman, dan menambahkannya ke dalam `README.md`.
 - [x] Melakukan `add`-`commit`-`push` ke GitHub.
 
@@ -38,23 +37,50 @@ Last checklist item:
 ---
 <a id="pog-test"></a>
 ## pog test [↑](#)
-soontm
+Form `POST` digunakan ketika kita ingin mengubah database dari website tersebut, dan form `GET` digunakan ketika kita ingin mengakses database tersebut. Form `POST` juga digunakan ketika kita berurusan dengan data sensitif/pribadi, karena Django secara otomatis mengenkripsi data yang dikirim melalui `POST` request. Sedangkan, data melalui form `GET` dibundel dan digunakan untuk membuat sebuah URL yang dikirim ke server.
+
+Contoh dari penggunaan form `POST` adalah Form Buat item baru di sebuah aplikasi inventory. Kita menggunakan form `POST` karena berhubungan dengan penambahan sebuah Item dalam database (perubahan database).
+
+Contoh dari penggunaan form `GET` adalah *web search*, seperti Google. Data yang terkirim melewati request bisa dilihat langsung di URL, contohnya:
+(https://www.google.com/search?q=django)<br>
+Data yang terkirim adalah `{'q': "django"}`
 
 ---
-<a id="XMLJS-ON-HTML"></a>
-## xmljs on html [↑](#)
-sometime later
+<a id="johns-xml-tml"></a>
+## johns xml tml [↑](#)
+Perbedaan utama dari ketiga format pengiriman data tersebut adalah struktur dan tujuan dari format tersebut.
+
+Struktur dari XML terlihat seperti *tree*, dengan menggunakan tag (dengan attribut opsional) untuk menandakan objek. Tag yang dapat digunakan bisa apa aja, yang menunjukkan tipe objek dari data berikutnya. Tujuan dari XML adalah sebagai tempat penyimpanan data atau untuk mengirim data antara sebuah server dengan server lainnya.
+
+Struktur dari JSON bersifat seperti *dictionary*, dengan setiap objek memiliki atribut masing masing. Tujuan dari JSON adalah sebagai representasi data yang lebih mudah dibaca oleh manusia, dan sebagai format pengiriman data yang lebih ringan daripada XML.
+
+Struktur dari HTML terlihat sama seperti XML, tetapi memiliki struktur tag yang berbeda dari XML. Tag yang dapat digunakan hanya dari yang dispesifikasi saja, seperti `<p>`, `<h1>`, dll. Tujuan dari HTML adalah sebagai template pembuatan sebuah *webpage*, yang dapat menampilkan data secara visual.
 
 ---
 <a id="json-the-best"></a>
 ## json the best [↑](#)
-might be happening shortly
+JSON paling sering digunakan pada pertukaran data antar aplikasi web dikarenakan beberapa faktors, seperti:
+
+- JSON merupakan format yang relatif sederhana, karena memiliki sintaks yang sedikit.
+- Filesize dari JSON lebih ringan dibandingkan format lain, sehingga mempercepat komunikasi antar aplikasi web.
+- JSON sangat mudah di-*parse* oleh banyak bahasa pemrograman, seperti JS (pasti), Python, dll.
 
 ---
 <a id="how-to"></a>
 ## How to [↑](#)
-how???
 
+#### Membuat input `form` untuk menambahkan objek model pada app sebelumnya.
+Membuat file baru `forms.py`, lalu membuat class baru bernama `ItemForm` yang meng-*inherit* dari `ModelForm`. Setting dari form yang berada di class Meta dari ItemForm diubah menjadi yang dibutuhkan. Dalam `views.py`, dibuat fungsi baru bernama `create_item` yang menjadi tempat untuk memroses POST request atau GET request. Jika request `GET`, maka mengembalikan website form menggunakan template `create_item.html`, dan jika request `POST`, maka dicek apa form tersebut valid. Jika valid, maka langsung disimpan di database, lalu redirect kembali ke `/main` (tempat display semua item)
+
+#### Tambahkan 5 fungsi `views` untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML *by ID*, dan JSON *by ID*.
+Untuk melihat objek dalam JSON dan XML, digunakan `serializers.serialize` pada data untuk mengubahnya menjadi format yang benar, lalu diberikan dalam `HTTPResponse` dengan setting tipe konten `application/json`
+Untuk melihat objek dalam HTML, disajikan menggunakan template `.html` agar terlihat pada browser yang digunakan.
+
+#### Membuat routing URL untuk masing-masing `views` yang telah ditambahkan pada poin 2.
+Import semua fungsi dari `main.views`, lalu buat path yang menghubungkan URL pattern dengan fungsi tersebut.
+
+#### Menambahkan pesan "Kamu menyimpan X item pada aplikasi ini" (dengan X adalah jumlah data item yang tersimpan pada aplikasi) dan menampilkannya di atas tabel data.
+Kita bisa langsung memanggil `len()` pada `QuerySet` yang didapatkan dari `Item.objects.all()` untuk mendapatkan jumlah item yang ada di database. Masukkan jumlah items didalam `context`, lalu ditaruh di template HTML.
 
 ---
 <a id="images-of-the-elusive-postman"></a>

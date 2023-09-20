@@ -1,7 +1,8 @@
 {% load static %}
 {% load markdown_extras %}
+{% load get_item %}
 
-<link rel="shortcut icon" type="image/png" href="{% static 'main/image/Pela_Sticker_02.png' %}" >
+<link rel="shortcut icon" type="image/png" href="{% static 'main/images/Pela_Sticker_02.png' %}" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/github-markdown.css' %}">
 <style>
@@ -28,8 +29,12 @@
 <article class="markdown-body">
 <h2>Static files list:</h2>
 
-{% for statics in static_list %}
-<a href="{% static 'main/'|add:statics %}">{{statics}}</a><br>
+{% for sdir in static_list.keys %}
+	<h4>{{sdir}}/</h4>
+	{% for statics in static_list|get_item:sdir %}
+		<li><a href="{% static sdir|add:'/'|add:statics %}">{{statics}}</a></li>
+	{% endfor %}
 {% endfor %}
+
 <hr>
 </article>
