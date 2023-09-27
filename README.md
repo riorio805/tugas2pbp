@@ -10,7 +10,7 @@ Link to main: [here](./main)<br>
 
 Second last checklist items:<br>
 [UserCreationForm](#genesis)
-\- [Authentic & Authoric](#wolves)
+\- [Authentic & Authoric](#abyssgard)
 \- [Eat cookies](#yummy)
 \- [Bad cookies](#yucky)
 \- [Implementasi](#How-to)<br>
@@ -38,11 +38,14 @@ Kedua fitur di atas wajib diimplementaskan (bukan sekedar tombol, melainkan haru
 ---
 <a id="genesis"></a>
 ## genesis [↑](#)
+UserCreationForm adalah sebuah form yang disediakan oleh Django untuk membuat suatu user baru. Kita menggunakan `UserCreationForm` sebagai *interface* untuk menambahkan suatu User dengan mudah dan tanpa kerumitan. Penggunaan UserCreationForm juga dapat meningkatkan keamanan dari website kita, karena secara otomatis password akan di-*hash*, sehingga susah dijebol oleh seorang *middleman*.
+
+Kekurangan dari form tersebut adalah limitasi dari *fields* yang dapat digunakan, sehingga jika ingin membuat website registrasi yang memiliki fields yang aneh-aneh, diperlukan form baru yang inherit dari UserCreationForm, atau dibuat dari awal yang inherit dari ModelForm.
 
 ---
-<a id="wolves"></a>
-## wolves [↑](#)
-
+<a id="abyssgard"></a>
+## abyssgard [↑](#)
+Autentikasi merupakan sebuah proses yang bertujuan memverifikasi identitas dari sebuah pengguna benar-benar merupakan pengguna tersebut. Biasanya autentikasi dilakukan dengan menggunakan username dan password yang diketahui oleh pengguna. Otorisasi merupakan proses yang bertujuan verifikasi apakah pengguna tersebut dapat melakukan sebuah aksi pada server. Otorisasi dilakukan secara internal, dengan verifikasi terjadi langsung di servernya. Otorisasi dilakukan agar pengguna tidak melakukan hal yang tidak boleh dilakukan. Autentikasi dan Otorisasi penting dilaksanakan karena merupakan 2 hal yang harus dilakukan agar server kita menjadi aman.
 
 ---
 <a id="yummy"></a>
@@ -57,20 +60,23 @@ Kedua fitur di atas wajib diimplementaskan (bukan sekedar tombol, melainkan haru
 ## How to [↑](#)
 
 #### Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
-
+Menggunakan UserCreationForm sebagai template form untuk mendaftar sebuah user. Proses login dapat menggunakan fungsi `authorisation` yang diberikan langsung dari Django, dengan input yang didapatkan dari sebuah Form. Login juga menentukan sebuah cookie yang menunjukkan login terakhir. Logout juga dapat menggunakan fungsi `logout`, dan hapus semua cookie yang tersimpan di browser.
 
 #### Membuat **dua** akun pengguna dengan masing-masing **tiga** *dummy data* menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun **di lokal**.
 <img src="./static/main/readme/2users3items.png" /><br>
 Pada website, terdapat sebuah user "rio" yang merupakan admin, dan user "PakBepe" yang merupakan user biasa.
 
 #### Menghubungkan model `Item` dengan `User`.
+Membuat field baru di model Item yang merupakan sebuah ForeignKey, yang dapat dihubungkan dengan sebuah user menggunakan data dari request.
 
 #### Menampilkan detail informasi pengguna yang sedang *logged in* seperti *username* dan menerapkan `cookies` seperti `last login` pada halaman utama aplikasi.
+Ketika login, kita menambahkan cookies dengan key `last_login` dan value waktu sekarang. Saat fungsi `show_main` dijalankan, kita mengambil cookie `last_login` dan mengambil username dari `request.user`, lalu passing kedalam context, dimana data tersebut dapat ditampilkan menggunakan template HTML.
 
 #### Tambahkan tombol dan fungsi untuk menambahkan `amount` suatu objek sebanyak satu dan tombol untuk mengurangi jumlah stok suatu objek sebanyak satu.
+Membuat suatu fungsi baru di `main.views` yang mengambil id dari objek dan amount yang ingin ditambah, lalu menambahkan amount dari item dengan id yang diberikan (jika ada). Lalu menghubungkan sebuah url ke fungsi tersebut. Terakhir, membuat button di website main yang redirect ke url yang sudah dihubungkan.
 
 #### Tambahkan tombol dan fungsi untuk menghapus suatu objek dari inventori.
-
+Sama mekanisme dengan menambah amount, tetapi fungsi ini menghapus item tersebut.
 
 
 ---
