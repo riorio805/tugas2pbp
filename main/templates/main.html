@@ -2,40 +2,106 @@
 {% load static %}
 {% load get_item %}
 
+{% block meta %}
+    <title>Inventory</title>
+	<style>
+		span.item_window div img {
+			position: relative;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			transition-duration: .2s;
+			margin: 0 auto;
+		}
+
+		span.item_window div img:hover {
+			scale: 1.2;
+			translate: 10% 10%;
+			transition-duration: .2s;
+		}
+
+		span.item_window {
+			width: 200px;
+			height: 550px;
+			padding: 3px;
+			padding-bottom: 2px;
+			border: 1px solid var(--color-fg-default) ;
+			display: inline-block;
+		}
+	</style>
+{% endblock meta %}
+
 {% block content %}
 <link rel="shortcut icon" type="image/png" href="{% static 'main/images/March_7th_Sticker_07.png' %}" >
 
 
 <h1>hsr inventory</h1>
+
+<h4>Hello, {{name}}.</h4>
+<a href="{% url 'main:logout' %}">
+	<button style="margin-top: 5px;margin-bottom: 5px;">
+		Logout
+	</button>
+</a>
+
+
 {% if all_item_count == item_count %}
-	<h4>There are currently {{all_item_count}} items in this app.<br>
+	<h4>There are currently {{all_item_count}} items in this app<br>
+		You have created {{user_item_count}} items.<br>
 	{% if all_item_count != 0 %}
 	To show only n items, append '/{n}' to the url path.<br>
 	Example: <a href="10">10 items</a></h4>
 	{%endif%}
 {%else%}
 	<h4>There are currently {{all_item_count}} items in this app, of which {{item_count}} are shown.<br>
-	<a href=".">See all items</a></h4>
+	<a href=".">
+		<button style="margin-top: 2px;"> See all items </button>
+	</a></h4>
 {%endif%}
+
+<h4>Messages:</h4>
+{% if messages %}     
+	{% for message in messages %}  
+		<li>{{ message }}</li>  
+	{% endfor %}  
+{% else %}
+	<li>No messages yet.</li>
+{% endif %}
+
+
+
+<br>
 
 {% for x in items %}
 <span class="item_window">
-	{% if x.id == 2 %}
-	<a href="{% static 'main/images/tricksnack.gif' %}">
-	{% endif %}
+	{% if x.id == 2 %} <a href="{% static 'main/images/tricksnack.gif' %}"> {% endif %}
+	
 	<div style="height:200px;position: relative;background-image:url('/static/main/images/Background_Item_{{x.rarity}}_Star.png');background-size: contain;">
 	<img style="background: transparent;" src="{{ x.image_dir }}" alt="{{x.name}}" title="{{x.name}}" width="160" class="bound"/><br>
 	</div>
-	<div style="border-bottom:1px solid var(--color-border-default);height:100px;">
+	<div style="border-bottom:1px solid var(--color-border-default);height:150px;">
 		<b>
 			{{x.name}}
-			{% if x.id == 2 %}
-			</a>
-			{% endif %}
-			<br>({{ rarity|get_item:x.id }})
+			{% if x.pk == 2 and x.name == "Trick Snack" %} </a> {% endif %}
+			
+			<br>({{ rarity|get_item:x.pk }})
 		</b>
 		<br>
 		Amount: {{x.amount}}
+		<a href="{% url 'main:change_item' id=x.pk amount=1 %}">
+			<button> + </button>
+		</a>
+		<a href="{% url 'main:change_item' id=x.pk amount=-1 %}">
+			<button> - </button>
+		</a>
+		<br>
+		Created by: {{ x.created_by.username }}
+		<br>
+		<a href="{% url 'main:delete_item'  id=x.pk %}" >
+			<button style="background-color: red; color:black;">
+				Delete Item
+			</button>
+		</a>
 	</div>
 	<div style="height:200px;width:200px;overflow:auto;">
 		{{x.description}}<br>
@@ -44,18 +110,21 @@
 </span>
 {% endfor %}
 
+
 <br><br>
-<a href="{% url 'main:create_item' %}" style="margin-right: 3px;">
-	<button>
+<a href="{% url 'main:create_item' %}">
+	<button style="margin-bottom: 4px;">
 		Add New Item
 	</button>
 </a>
+<br>
 
 <a href=".."><button>Go back</button></a>
+
 <hr>
 description, effects, and images taken (and condensed) from <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
 github-markdown.css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a> and used under the MIT License<br>
 website by sefriano edsel jieftara, class of pbp d</p>
 
 
-{% endblock %}
+{% endblock content %}

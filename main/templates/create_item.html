@@ -1,7 +1,11 @@
 {% extends 'markdown_base.html' %}
 {% load static %}
 {% block content %}
-<link rel="shortcut icon" type="image/png" href="{% static 'main/images/Pela_Sticker_02.png' %}" >
+{% block meta %}
+    <title>Create an item</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/images/Pela_Sticker_02.png' %}" >
+{% endblock meta %}
+
 
 <h1>New Item</h1>
 <form method="POST">

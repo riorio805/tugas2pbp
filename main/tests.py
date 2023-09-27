@@ -45,3 +45,6 @@ class mainTest(TestCase):
         
     def test_json(self):
         response = Client().get('/json/')
+
+    def test_xml(self):
+        response = Client().get('/xml/')

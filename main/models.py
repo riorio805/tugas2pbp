@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator, URLValidator
 from inventory.settings import ALLOWED_FILES
@@ -27,3 +28,4 @@ class Item(models.Model):
     rarity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     effect = models.TextField()
     image_dir = models.URLField(validators=[URLValidator(), validate_image_url])
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)

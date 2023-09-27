@@ -1,254 +1,275 @@
 [
-    {
-        "model":"main.Item",
-        "pk":1,
-        "fields":{
-            "name": "Cosmic Fried Rice",
-            "amount": 82,
-            "description": "Golden brown fried rice that is appealing to the eye and the stomach.",
-            "rarity": 2,
-            "effect": "Heals a single ally by 24% of their Max HP plus 300 extra HP.",
-            "image_dir": "/static/main/images/Item_Cosmic_Fried_Rice.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":2,
-        "fields":{
-            "name": "Trick Snack",
-            "amount": 124,
-            "description": "A packet of cooked seeds. Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
-            "rarity": 1,
-            "effect": "Recovers 2 TP for the entire team.",
-            "image_dir": "/static/main/images/Item_Trick_Snack.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":3,
-        "fields":{
-            "name": "Immortal's Delight",
-            "amount": 8,
-            "description": "An extremely unhealthy drink, but when you drink it, you will have a mysterious smile on your face.",
-            "rarity": 3,
-            "effect": "ATK of all allies increases by 14% plus an extra 230 for the next battle.",
-            "image_dir": "/static/main/images/Item_Immortal's_Delight.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":4,
-        "fields":{
-            "name": "Mung Bean Soda",
-            "amount": 90,
-            "description": "Made from fermented legume-based products. It smells sour and pungent, but tastes cool and refreshing.",
-            "rarity": 2,
-            "effect": "ATK of all allies increases by 5% plus an extra 170 for the next battle.",
-            "image_dir": "/static/main/images/Item_Mung_Bean_Soda.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":5,
-        "fields":{
-            "name": "Health Detox Pill",
-            "amount": 16,
-            "description": "An all-purpose antidote that can neutralize the majority of toxic substances entering the human body.",
-            "rarity": 3,
-            "effect": "All allies are immune to debuffs for 3 turns for the next battle.",
-            "image_dir": "/static/main/images/Item_Health_Detox_Pill.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":6,
-        "fields":{
-            "name": "Trash",
-            "amount": 89,
-            "description": "Worthless trash. Better carry some with you.",
-            "rarity": 1,
-            "effect": "Causes a single ally to lose HP equal to 15% of their Max HP.",
-            "image_dir": "/static/main/images/Item_Trash.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":7,
-        "fields":{
-            "name": "Simple Protective Gear",
-            "amount": 62,
-            "description": "Simple protection gear to cover the most vulnerable part of your body.",
-            "rarity": 2,
-            "effect": "Increase DEF of all allies by 25% in the next battle.",
-            "image_dir": "/static/main/images/Item_Simple_Protective_Gear.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":8,
-        "fields":{
-            "name": "Topological Acceleration Band",
-            "amount": 3,
-            "description": "Some researchers invented this as an experiment. Other than for workout purposes, its use is very limited.",
-            "rarity": 4,
-            "effect": "Increases SPD of all allies by 24% for 2 turns.",
-            "image_dir": "/static/main/images/Item_Topological_Acceleration_Band.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":9,
-        "fields":{
-            "name": "Energy Drink (sugar-free)",
-            "amount": 14,
-            "description": "A bottle of Energy Drink. Some may call it soulless, but honestly, it's not that bad.",
-            "rarity": 3,
-            "effect": "Regenerates 50% of Max Energy for a single ally.",
-            "image_dir": "/static/main/images/Item_Energy_Drink_(sugar-free).png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":10,
-        "fields":{
-            "name": "Short Rejuvepill",
-            "amount": 69,
-            "description": "A simple remedy made with various ingredients. It can't cure all ailments, but it's better than nothing.",
-            "rarity": 1,
-            "effect": "Heals one ally for 1 HP.",
-            "image_dir": "/static/main/images/Item_Short_Rejuvepill.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":11,
-        "fields":{
-            "name": "Berrypheasant Skewers",
-            "amount": 33,
-            "description": "It is actually fruit skewers, and no Berrypheasants were harmed during the production process.",
-            "rarity": 1,
-            "effect": "Heals one ally by 15% of the ally's Max HP plus 150 extra HP.",
-            "image_dir": "/static/main/images/Item_Berrypheasant_Skewers.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":12,
-        "fields":{
-            "name": "Crystal Lizard Satay",
-            "amount": 6,
-            "description": "A meat skewer made from cold-blooded reptiles that live in mines.",
-            "rarity": 2,
-            "effect": "Recovers 4 TP for your team, but each team member loses HP equal to 15% of their Max HP.",
-            "image_dir": "/static/main/images/Item_Crystal_Lizard_Satay.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":13,
-        "fields":{
-            "name": "Comfort Food",
-            "amount": 11,
-            "description": "Simple food that lacks character, but they do make you feel stuffed.",
-            "rarity": 1,
-            "effect": "Heals a single ally by 15% of their Max HP plus 150 extra HP.",
-            "image_dir": "/static/main/images/Item_Comfort_Food.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":14,
-        "fields":{
-            "name": "Rice Plant Panicle",
-            "amount": 12,
-            "description": "The pleasant smell gives you good appetite, so you choose not to ask why seeds planted on Protein Rice can yield flowers.",
-            "rarity": 2,
-            "effect": "Increases Incoming Healing of all allies by 18% for the next battle.",
-            "image_dir": "/static/main/images/Item_Rice_Plant_Panicle.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":15,
-        "fields":{
-            "name": "Steamed Puffergoat Milk",
-            "amount": 22,
-            "description": "It's sweet after warming without needing extra sugar, but becomes bitter when cold.",
-            "rarity": 2,
-            "effect": "Revives one downed character and heals them for 10% of the character's Max HP.",
-            "image_dir": "/static/main/images/Item_Steamed_Puffergoat_Milk.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":16,
-        "fields":{
-            "name": "Enhancement Paste: Quantum",
-            "amount": 8,
-            "description": "A cream made from a mixture of Path materials and other things. Apply it to the right weapon to boost it's effectiveness.",
-            "rarity": 3,
-            "effect": "Increases Quantum DMG of all allies by 24% for the next battle.",
-            "image_dir": "/static/main/images/Item_Enhancement_Paste_Quantum.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":17,
-        "fields":{
-            "name": "Jim Roger Bread Soda",
-            "amount": 10,
-            "description": "Crush dried bread into fine crumbs, add water, extract the liquid and let it undergo fermentation. Add Jim Roger patented ingredients as the last step. And there you go, authentic taste of Jim Roger!",
-            "rarity": 3,
-            "effect": "Heals a single ally by 100% of their Max HP.",
-            "image_dir": "/static/main/images/Item_Jim_Roger_Bread_Soda.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":18,
-        "fields":{
-            "name": "Wild Herb Soup",
-            "amount": 18,
-            "description": "Soup made of a type of moss that has a soothing bluish glow and can be found everywhere underground.",
-            "rarity": 2,
-            "effect": "Causes all allies to lose HP equal to 15% of their Max HP and increase their ATK by 200 for the next battle.",
-            "image_dir": "/static/main/images/Item_Wild_Herb_Soup.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":19,
-        "fields":{
-            "name": "Kapo-Kali",
-            "amount": 6,
-            "description": "The king of soft drinks. It looks like an azure gravity rainbow with sparkling bubbles surging in the bottle.",
-            "rarity": 3,
-            "effect": "Increases all allies' DMG of a random Type by 30% for the next battle.",
-            "image_dir": "/static/main/images/Item_Kapo-Kali.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":20,
-        "fields":{
-            "name": "Disposable Kinetic Arm",
-            "amount": 9,
-            "description": "A formidable kinetic arm, charged with hatred towards organic life forms.",
-            "rarity": 4,
-            "effect": "Increases ATK of all allies by 325 and CRIT Rate by 12% for the next battle.",
-            "image_dir": "/static/main/images/Item_Disposable_Kinetic_Arm.png"
-        }
-    },
-    {
-        "model":"main.Item",
-        "pk":21,
-        "fields":{
-            "name": "Longevity Pill of Cruelty",
-            "amount": 4,
-            "description": "It is said to have the effect of improving overall fitness and rendering those who take it immune to all diseases for a short period of time.",
-            "rarity": 4,
-            "effect": "Increases Max HP of all allies by 20% and Effect RES by 6% in the next 3 battles.",
-            "image_dir": "/static/main/images/Item_Longevity_Pill_of_Cruelty.png"
-        }
+  {
+    "model": "main.item",
+    "pk": 1,
+    "fields": {
+      "name": "Cosmic Fried Rice",
+      "amount": 82,
+      "description": "Golden brown fried rice that is appealing to the eye and the stomach.",
+      "rarity": 2,
+      "effect": "Heals a single ally by 24% of their Max HP plus 300 extra HP.",
+      "image_dir": "/static/main/images/Item_Cosmic_Fried_Rice.png",
+      "created_by": 1
     }
+  },
+  {
+    "model": "main.item",
+    "pk": 2,
+    "fields": {
+      "name": "Trick Snack",
+      "amount": 124,
+      "description": "A packet of cooked seeds. Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
+      "rarity": 1,
+      "effect": "Recovers 2 TP for the entire team.",
+      "image_dir": "/static/main/images/Item_Trick_Snack.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 3,
+    "fields": {
+      "name": "Immortal's Delight",
+      "amount": 8,
+      "description": "An extremely unhealthy drink, but when you drink it, you will have a mysterious smile on your face.",
+      "rarity": 3,
+      "effect": "ATK of all allies increases by 14% plus an extra 230 for the next battle.",
+      "image_dir": "/static/main/images/Item_Immortal's_Delight.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 4,
+    "fields": {
+      "name": "Mung Bean Soda",
+      "amount": 90,
+      "description": "Made from fermented legume-based products. It smells sour and pungent, but tastes cool and refreshing.",
+      "rarity": 2,
+      "effect": "ATK of all allies increases by 5% plus an extra 170 for the next battle.",
+      "image_dir": "/static/main/images/Item_Mung_Bean_Soda.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 5,
+    "fields": {
+      "name": "Health Detox Pill",
+      "amount": 16,
+      "description": "An all-purpose antidote that can neutralize the majority of toxic substances entering the human body.",
+      "rarity": 3,
+      "effect": "All allies are immune to debuffs for 3 turns for the next battle.",
+      "image_dir": "/static/main/images/Item_Health_Detox_Pill.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 6,
+    "fields": {
+      "name": "Trash",
+      "amount": 89,
+      "description": "Worthless trash. Better carry some with you.",
+      "rarity": 1,
+      "effect": "Causes a single ally to lose HP equal to 15% of their Max HP.",
+      "image_dir": "/static/main/images/Item_Trash.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 7,
+    "fields": {
+      "name": "Simple Protective Gear",
+      "amount": 62,
+      "description": "Simple protection gear to cover the most vulnerable part of your body.",
+      "rarity": 2,
+      "effect": "Increase DEF of all allies by 25% in the next battle.",
+      "image_dir": "/static/main/images/Item_Simple_Protective_Gear.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 8,
+    "fields": {
+      "name": "Topological Acceleration Band",
+      "amount": 3,
+      "description": "Some researchers invented this as an experiment. Other than for workout purposes, its use is very limited.",
+      "rarity": 4,
+      "effect": "Increases SPD of all allies by 24% for 2 turns.",
+      "image_dir": "/static/main/images/Item_Topological_Acceleration_Band.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 9,
+    "fields": {
+      "name": "Energy Drink (sugar-free)",
+      "amount": 14,
+      "description": "A bottle of Energy Drink. Some may call it soulless, but honestly, it's not that bad.",
+      "rarity": 3,
+      "effect": "Regenerates 50% of Max Energy for a single ally.",
+      "image_dir": "/static/main/images/Item_Energy_Drink_(sugar-free).png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 10,
+    "fields": {
+      "name": "Short Rejuvepill",
+      "amount": 69,
+      "description": "A simple remedy made with various ingredients. It can't cure all ailments, but it's better than nothing.",
+      "rarity": 1,
+      "effect": "Heals one ally for 1 HP.",
+      "image_dir": "/static/main/images/Item_Short_Rejuvepill.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 11,
+    "fields": {
+      "name": "Berrypheasant Skewers",
+      "amount": 29,
+      "description": "It is actually fruit skewers, and no Berrypheasants were harmed during the production process.",
+      "rarity": 1,
+      "effect": "Heals one ally by 15% of the ally's Max HP plus 150 extra HP.",
+      "image_dir": "/static/main/images/Item_Berrypheasant_Skewers.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 12,
+    "fields": {
+      "name": "Crystal Lizard Satay",
+      "amount": 6,
+      "description": "A meat skewer made from cold-blooded reptiles that live in mines.",
+      "rarity": 2,
+      "effect": "Recovers 4 TP for your team, but each team member loses HP equal to 15% of their Max HP.",
+      "image_dir": "/static/main/images/Item_Crystal_Lizard_Satay.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 13,
+    "fields": {
+      "name": "Comfort Food",
+      "amount": 12,
+      "description": "Simple food that lacks character, but they do make you feel stuffed.",
+      "rarity": 1,
+      "effect": "Heals a single ally by 15% of their Max HP plus 150 extra HP.",
+      "image_dir": "/static/main/images/Item_Comfort_Food.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 14,
+    "fields": {
+      "name": "Rice Plant Panicle",
+      "amount": 12,
+      "description": "The pleasant smell gives you good appetite, so you choose not to ask why seeds planted on Protein Rice can yield flowers.",
+      "rarity": 2,
+      "effect": "Increases Incoming Healing of all allies by 18% for the next battle.",
+      "image_dir": "/static/main/images/Item_Rice_Plant_Panicle.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 15,
+    "fields": {
+      "name": "Steamed Puffergoat Milk",
+      "amount": 22,
+      "description": "It's sweet after warming without needing extra sugar, but becomes bitter when cold.",
+      "rarity": 2,
+      "effect": "Revives one downed character and heals them for 10% of the character's Max HP.",
+      "image_dir": "/static/main/images/Item_Steamed_Puffergoat_Milk.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 16,
+    "fields": {
+      "name": "Enhancement Paste: Quantum",
+      "amount": 8,
+      "description": "A cream made from a mixture of Path materials and other things. Apply it to the right weapon to boost it's effectiveness.",
+      "rarity": 3,
+      "effect": "Increases Quantum DMG of all allies by 24% for the next battle.",
+      "image_dir": "/static/main/images/Item_Enhancement_Paste_Quantum.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 17,
+    "fields": {
+      "name": "Jim Roger Bread Soda",
+      "amount": 10,
+      "description": "Crush dried bread into fine crumbs, add water, extract the liquid and let it undergo fermentation. Add Jim Roger patented ingredients as the last step. And there you go, authentic taste of Jim Roger!",
+      "rarity": 3,
+      "effect": "Heals a single ally by 100% of their Max HP.",
+      "image_dir": "/static/main/images/Item_Jim_Roger_Bread_Soda.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 18,
+    "fields": {
+      "name": "Wild Herb Soup",
+      "amount": 18,
+      "description": "Soup made of a type of moss that has a soothing bluish glow and can be found everywhere underground.",
+      "rarity": 2,
+      "effect": "Causes all allies to lose HP equal to 15% of their Max HP and increase their ATK by 200 for the next battle.",
+      "image_dir": "/static/main/images/Item_Wild_Herb_Soup.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 19,
+    "fields": {
+      "name": "Kapo-Kali",
+      "amount": 6,
+      "description": "The king of soft drinks. It looks like an azure gravity rainbow with sparkling bubbles surging in the bottle.",
+      "rarity": 3,
+      "effect": "Increases all allies' DMG of a random Type by 30% for the next battle.",
+      "image_dir": "/static/main/images/Item_Kapo-Kali.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 20,
+    "fields": {
+      "name": "Disposable Kinetic Arm",
+      "amount": 9,
+      "description": "A formidable kinetic arm, charged with hatred towards organic life forms.",
+      "rarity": 4,
+      "effect": "Increases ATK of all allies by 325 and CRIT Rate by 12% for the next battle.",
+      "image_dir": "/static/main/images/Item_Disposable_Kinetic_Arm.png",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "main.item",
+    "pk": 21,
+    "fields": {
+      "name": "Longevity Pill of Cruelty",
+      "amount": 4,
+      "description": "It is said to have the effect of improving overall fitness and rendering those who take it immune to all diseases for a short period of time.",
+      "rarity": 4,
+      "effect": "Increases Max HP of all allies by 20% and Effect RES by 6% in the next 3 battles.",
+      "image_dir": "/static/main/images/Item_Longevity_Pill_of_Cruelty.png",
+      "created_by": 1
+    }
+  }
 ]
