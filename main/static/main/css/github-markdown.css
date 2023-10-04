@@ -42,7 +42,7 @@
     --color-accent-fg: #58a6ff;
     --color-accent-emphasis: #1f6feb;
     --color-attention-subtle: rgba(187,128,9,0.15);
-    --color-danger-fg: #f85149;
+    --color-danger-fg: #ff2b20;
   }
 }
 
@@ -90,7 +90,7 @@
     --color-accent-fg: #0969da;
     --color-accent-emphasis: #0969da;
     --color-attention-subtle: #fff8c5;
-    --color-danger-fg: #cf222e;
+    --color-danger-fg: #e92431;
   }
 }
 
@@ -241,6 +241,7 @@
 .markdown-body [type=button],
 .markdown-body [type=reset],
 .markdown-body [type=submit] {
+  appearance: button;
   -webkit-appearance: button;
 }
 

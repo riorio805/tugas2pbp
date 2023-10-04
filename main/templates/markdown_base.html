@@ -2,13 +2,47 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{% static 'main/css/github-markdown.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css' %}">
 	<style>
+		.navbar {
+			z-index: 2;
+		}
 		.markdown-body {
 			box-sizing: border-box;
 			min-width: 200px;
 			max-width: 1200px;
 			margin: 0 auto;
 			padding: 45px;
+			padding-top: 20px;
+		}
+
+		.dropdown {
+			position: relative;
+			display: inline-block;
+			padding-left: calc(var(--bs-gutter-x) * .5);
+			margin-right: auto;
+			margin-left: auto
+		}
+
+		.dropdown>img.icon_dark,
+		.dropdown>img.icon_light {
+			height: 4rem;
+			width: 4rem;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			padding: 12px 16px;
+			z-index: 1;
+		}
+
+		.dropdown:hover .dropdown-content {
+  			display: block;
+			transition-duration: .2s;
 		}
 
 		@media (max-width: 767px) {
@@ -16,12 +50,22 @@
 				padding: 15px;
 			}
 		}
+
 		@media (prefers-color-scheme: dark) {
-			span {
-				border: 1px solid white;
-			}
 			body {
 				background-color: #0d1117;
+			}
+			.dropdown .icon_light {
+				display: none;
+			}
+			.dropdown-content {
+				background-color: #2b3035;
+			}
+		}
+
+		@media (prefers-color-scheme: light) {
+			.dropdown .icon_dark {
+				display: none;
 			}
 		}
 	</style>
@@ -30,6 +74,59 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding-right: 12%; margin-bottom: 20px;">
+		<div class="dropdown" style="padding-left: 1rem;padding-right: 5px;margin-left: 0;">
+			<img class="icon_dark" src="{% static 'main/icons/Menu_icon_dark.png'%}">
+			<img class="icon_light" src="{% static 'main/icons/Menu_icon_light.png'%}">
+			<ul class="navbar-nav dropdown-content">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'main:create_item' %}">
+						Add item
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'main:show_statics_list' %}">
+						Statics
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="/archive/archive_list.md">
+						Archive
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">
+				hsr inventory
+			</a>
+			<div class="collapse navbar-collapse" id="navbarNav"">
+				<span id="user-information" style="margin-left: auto;">
+					<span class="navbar-text" style="margin-right: 5px;">
+						{% if name %}
+							Hello, {{name}}!
+						{% else %}
+							Hello user, please log in.
+						{% endif%}
+					</span>
+					{% if name %}
+					<a href="{% url 'main:logout' %}">
+						<button class="login-button">
+							Logout
+						</button>
+					</a>
+					{% else %}
+					<a href="{% url 'main:login' %}">
+						<button class="login-button">
+							Login
+						</button>
+					</a>
+					{% endif%}
+				</span>
+			</div> 
+		</div>
+	</nav>
+
 	<article class="markdown-body">
 	{% block content %}
 	{% endblock content %}

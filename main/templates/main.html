@@ -7,6 +7,8 @@
 	<style>
 		span.item_window div img {
 			position: relative;
+			max-height: 200px;
+			max-width: 200px;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
@@ -22,11 +24,36 @@
 
 		span.item_window {
 			width: 200px;
-			height: 550px;
+			height: 580px;
 			padding: 3px;
 			padding-bottom: 2px;
 			border: 1px solid var(--color-fg-default) ;
 			display: inline-block;
+		}
+
+		@keyframes rainbow { 
+    		to{background-position:1000px 50%}
+		}
+
+		.rainbow-text {
+			background-image: repeating-linear-gradient( to right,
+				rgba(255, 0, 0, 1) 0%,
+				rgba(255, 154, 0, 1) 10%,
+				rgba(208, 222, 33, 1) 20%,
+				rgba(79, 220, 74, 1) 30%,
+				rgba(63, 218, 216, 1) 40%,
+				rgba(47, 201, 226, 1) 50%,
+				rgba(28, 127, 238, 1) 60%,
+				rgba(95, 21, 242, 1) 70%,
+				rgba(186, 12, 248, 1) 80%,
+				rgba(251, 7, 217, 1) 90%,
+				rgba(255, 0, 0, 1) 100%);
+			text-align: center;
+			background-size: 1000px 100px;
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			animation: rainbow 6s linear infinite;
 		}
 	</style>
 {% endblock meta %}
@@ -36,13 +63,6 @@
 
 
 <h1>hsr inventory</h1>
-
-<h4>Hello, {{name}}.<br></h4>
-<a href="{% url 'main:logout' %}">
-	<button style="margin-top: 5px;margin-bottom: 5px;">
-		Logout
-	</button>
-</a>
 
 
 {% if all_item_count == item_count %}
@@ -59,13 +79,11 @@
 	</a></h4>
 {%endif%}
 
-<h4>Messages:</h4>
-{% if messages %}     
+{% if messages %}
+	<h4>Messages:</h4>
 	{% for message in messages %}  
 		<li>{{ message }}</li>  
-	{% endfor %}  
-{% else %}
-	<li>No messages yet.</li>
+	{% endfor %}
 {% endif %}
 
 
@@ -76,11 +94,11 @@
 <span class="item_window">
 	{% if x.id == 2 %} <a href="{% static 'main/images/tricksnack.gif' %}"> {% endif %}
 	
-	<div style="height:200px;position: relative;background-image:url('/static/main/images/Background_Item_{{x.rarity}}_Star.png');background-size: contain;">
-	<img style="background: transparent;" src="{{ x.image_dir }}" alt="{{x.name}}" title="{{x.name}}" width="160" class="bound"/><br>
+	<div style="padding-bottom: 2px;height:200px;position: relative;background-image:url('/static/main/images/Background_Item_{{x.rarity}}_Star.png');background-size: contain;">
+		<img style="background: transparent;" src="{{ x.image_dir }}" alt="{{x.name}}" title="{{x.name}}" width="160" class="bound"/><br>
 	</div>
-	<div style="border-bottom:1px solid var(--color-border-default);height:150px;">
-		<b>
+	<div style="border-bottom:1px solid var(--color-border-default);height:180px;">
+		<b {% if x.pk == last_item %} class="rainbow-text" {% endif %} >
 			{{x.name}}
 			{% if x.pk == 2 and x.name == "Trick Snack" %} </a> {% endif %}
 			
@@ -122,12 +140,16 @@
 <a href=".."><button>Go back</button></a>
 
 <br>
+{% if last_login %}
 <h4>Last login: {{last_login}}</h4>
+{% endif %}
 
 <hr>
 description, effects, and images taken (and condensed) from <a href=https://honkai-star-rail.fandom.com/wiki/Honkai:_Star_Rail_Wiki>Honkai: Star Rail wiki</a>.<br>
-github-markdown.css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a> and used under the MIT License<br>
-website by sefriano edsel jieftara, class of pbp d</p>
+github-markdown.css by <a href="https://github.com/sindresorhus/github-markdown-css">sindresorhus</a><br>
+bootstrap.min.css by <a href="https://github.com/twbs/bootstrap/">The Bootstrap Authors</a><br>
+both css stylesheets modified and used under the MIT license.<br>
+website by sefriano edsel jieftara, class of pbp d
 
 
 {% endblock content %}

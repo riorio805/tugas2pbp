@@ -37,6 +37,11 @@ def show_main(request, item_count=-1):
     rarity = {}
     for i in items:
         rarity[i.pk] = "★" * i.rarity + "☆" * (5 - i.rarity)
+    
+    if items:
+        last_item = items[len(items)-1].pk
+    else:
+        last_item = -1
 
     context = {
         'items': items,
@@ -44,9 +49,12 @@ def show_main(request, item_count=-1):
         'user_item_count': user_item_count,
         'item_count': len(items),
         'rarity': rarity,
-        'last_login': request.COOKIES['last_login'],
         'name': request.user.username,
+        'last_item': last_item,
     }
+
+    if 'last_login' in request.COOKIES:
+        context['last_login'] = request.COOKIES['last_login']
 
     return render(request, "main.html", context)
 

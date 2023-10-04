@@ -10,7 +10,8 @@ class mainTest(TestCase):
             description="A packet of cooked seeds. Eat a handful of them, and they'll launch themselves to the roof of your mouth like popping candy.",
             rarity=1,
             effect="Recovers 2 TP for the entire team.",
-            image_dir="/static/main/images/Item_Trick_Snack.png")
+            image_dir="/static/main/images/Item_Trick_Snack.png",
+            created_by=1)
         
 
     def test_main_url_is_exist(self):
@@ -48,3 +49,5 @@ class mainTest(TestCase):
 
     def test_xml(self):
         response = Client().get('/xml/')
+    
+    
