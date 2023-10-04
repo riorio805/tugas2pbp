@@ -2,6 +2,10 @@
 {% load static %}
 {% load markdown_extras %}
 
+{% block meta %}
+<title>{{filename}}</title>
+{% endblock meta %}
+
 {% block content %}
 {{ content | markdown | safe }}
 {% endblock %}

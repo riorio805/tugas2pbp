@@ -137,15 +137,15 @@ Element selector ini dapat dikombinasikan dan digabungkan (menggunakan `,`) untu
 Tag yang baru di HTML5 yang saya ketahui:
 
 #### Semantic structure tags:<br>
-`<article>, <aside>, <footer>, <header>, <nav>, <section>`<br>
+`<article>, <aside>, <footer>, <header>, <nav>, <section>` <br>
 Keenam HTML tag ini berfungsi sebagai penanda struktur konten yang ditampilkan pada browser, agar pembaca file HTML dapat dengan mudah melihat strukturnya.
 
 #### Display tags:<br>
 `<details>` => Tag ini berfungsi untuk menampilkan informasi yang awalnya disembunyikan hingga user menekan sebuah tombol<br>
-`<mark>` => Tag ini berfungsi untuk meng-*highlight* suatu teks yang berada di file.
+`<mark>` => Tag ini berfungsi untuk meng-*highlight* suatu teks.
 
 #### Input tags: <br>
-`<datalist>` => Tag ini ditempatkan setelah tag `<input>` dan berfungsi untuk menampilkan beberapa input yang sudah ditentukan sebagai rekomendasi terhadap input sebelumnya.
+`<datalist>` => Tag ini ditempatkan setelah tag `<input>` dan berfungsi untuk menampilkan beberapa input yang sudah ditentukan sebagai rekomendasi terhadap input.
 
 #### Media tags: <br>
 `<audio>` => Tag ini digunakan untuk memasukkan sebuah file berupa audio ke web browser. File audio dapat langsung dimainkan saat webpage di-load.<br>

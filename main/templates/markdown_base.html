@@ -103,8 +103,8 @@
 			<div class="collapse navbar-collapse" id="navbarNav"">
 				<span id="user-information" style="margin-left: auto;">
 					<span class="navbar-text" style="margin-right: 5px;">
-						{% if name %}
-							Hello, {{name}}!
+						{% if request.user %}
+							Hello, {{ request.user.username }}!
 						{% else %}
 							Hello user, please log in.
 						{% endif%}

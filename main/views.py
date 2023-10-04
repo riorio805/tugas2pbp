@@ -49,7 +49,6 @@ def show_main(request, item_count=-1):
         'user_item_count': user_item_count,
         'item_count': len(items),
         'rarity': rarity,
-        'name': request.user.username,
         'last_item': last_item,
     }
 
@@ -100,19 +99,22 @@ def show_readme(request):
     with open(BASE_DIR/'README.md', 'rb') as f:
         a = f.read().decode()   
     context = {
-        'content': a
+        'content': a,
+        'filename': "main"
     }
     return render(request, "md.html", context)
 
 
 def show_archive(request, file):
+    filename = file
     file = 'archive/' + file
     print(file)
     with open(BASE_DIR / file , 'rb') as f:
         a = f.read().decode()   
     
     context = {
-        'content': a
+        'content': a,
+        'filename': filename
     }
     return render(request, "md.html", context)
 
