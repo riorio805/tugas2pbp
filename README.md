@@ -33,7 +33,7 @@ More checklist items:<br>
 - [ ] Menjawab beberapa pertanyaan berikut pada `README.md` pada *root folder* (silakan modifikasi `README.md` yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
     - [x] Apa itu Django `UserCreationForm`, dan jelaskan apa kelebihan dan kekurangannya?
     - [x] Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
-    - [ ] Apa itu *cookies* dalam konteks aplikasi web, dan bagaimana Django menggunakan *cookies* untuk mengelola data sesi pengguna?
+    - [x] Apa itu *cookies* dalam konteks aplikasi web, dan bagaimana Django menggunakan *cookies* untuk mengelola data sesi pengguna?
     - [ ] Apakah penggunaan *cookies* aman secara *default* dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
     - [x] Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
 - [x] Melakukan `add`-`commit`-`push` ke GitHub.
@@ -61,7 +61,7 @@ Kedua fitur di atas wajib diimplementaskan (bukan sekedar tombol, melainkan haru
 ---
 <a id="genesis"></a>
 ## genesis [↑](#)
-UserCreationForm adalah sebuah form yang disediakan oleh Django untuk membuat suatu user baru. Kita menggunakan `UserCreationForm` sebagai *interface* untuk menambahkan suatu User dengan mudah dan tanpa kerumitan. Penggunaan UserCreationForm juga dapat meningkatkan keamanan dari website kita, karena secara otomatis password akan di-*hash*, sehingga susah dijebol oleh seorang *middleman*.
+UserCreationForm adalah sebuah form yang disediakan oleh Django untuk membuat suatu user baru. Kita menggunakan `UserCreationForm` sebagai *interface* untuk menambahkan suatu User dengan mudah dan tanpa kerumitan. Penggunaan UserCreationForm juga dapat meningkatkan keamanan dari website kita, karena secara otomatis password akan dienkripsi, sehingga susah dijebol oleh seorang *middleman*.
 
 Kekurangan dari form tersebut adalah limitasi dari *fields* yang dapat digunakan, sehingga jika ingin membuat website registrasi yang memiliki fields yang aneh-aneh, diperlukan form baru yang inherit dari UserCreationForm, atau dibuat dari awal yang inherit dari ModelForm.
 
@@ -73,12 +73,12 @@ Autentikasi merupakan sebuah proses yang bertujuan memverifikasi identitas dari 
 ---
 <a id="yummy"></a>
 ## yummy cookies [↑](#)
-Cookies merupakan sebuah 
+Cookies merupakan sebuah data yang tersimpan di sisi user (browser) yang di kirim oleh server, dan digunakan untuk menyimpan informasi yang akan dikirim ke server untuk mengetahui identitas pengguna. Django menggunakan cookies untuk menyimpan sebuah token bernama `sessionid` ketika telah log-in ke website untuk mengingat bahwa ini benar-benar pengguna yang sama.
 
 ---
 <a id="yucky"></a>
 ## yucky cookies [↑](#)
-Penggunaan cookies secara default tidak aman.
+Penggunaan *cookies* dalam implementasinya aman digunakan, tetapi *cookies* yang tersimpan di browser dapat dilihat oleh orang lain, seperti *hacker* yang dapat menggunakannya untuk meniru user lain, dan cookies yang datang dari pihak lain yang dapat melacak pengguna kemanapun. Jadi, dibutuhkan perhatian dalam penggunaan cookies.
 
 ---
 <a id="how-to"></a>

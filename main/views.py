@@ -17,10 +17,12 @@ import datetime
 # Create your views here.
 @login_required(login_url='/login')
 def show_main(request, item_count=-1):
+    # find lengths
+    all_item_count = len(Item.objects.all())
+    user_item_count = len(Item.objects.filter(created_by=request.user))
+
     # Grab items from database
     items = Item.objects.all()
-    all_item_count = len(items)
-    user_item_count = len(Item.objects.filter(created_by=request.user))
 
     # randomly select n items from database if item_count >= 0
     indexes = [i.pk for i in items]
